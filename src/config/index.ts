@@ -20,6 +20,7 @@ export const BASE_ASTRA_EXPLORER_URLS = {
 // 10 ASA per block goes to ASA syrup pool
 // 9 ASA per block goes to Yield farms and lottery
 // ASA_PER_BLOCK in config/index.ts = 40 as we only change the amount sent to the burn pool which is effectively a farm.
+// @todo ASA_PER_BLOCK chua chot
 export const ASA_PER_BLOCK = 2
 export const BLOCKS_PER_YEAR = (60 / BSC_BLOCK_TIME) * 60 * 24 * 365 // 10512000
 export const ASA_PER_YEAR = ASA_PER_BLOCK * BLOCKS_PER_YEAR

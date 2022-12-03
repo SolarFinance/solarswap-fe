@@ -17,13 +17,13 @@ import storage from 'redux-persist/lib/storage'
 // import farmsReducer from './farms'
 import { updateVersion } from './global/actions'
 // import infoReducer from './info'
-// import lists from './lists/reducer'
+import lists from './lists/reducer'
 // import lotteryReducer from './lottery'
 // import mint from './mint/reducer'
 // import multicall from './multicall/reducer'
 // import poolsReducer from './pools'
 // import predictionsReducer from './predictions'
-// import swap from './swap/reducer'
+import swap from './swap/reducer'
 // import transactions from './transactions/reducer'
 import user from './user/reducer'
 
@@ -63,13 +63,13 @@ const persistedReducer = persistReducer(
 		 *
 		 */
 		// Exchange
-		user
+		user,
 		// transactions,
-		// swap,
+		swap,
 		// mint,
 		// burn,
 		// multicall,
-		// lists,
+		lists
 	})
 )
 
