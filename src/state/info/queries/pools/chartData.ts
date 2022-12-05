@@ -5,6 +5,13 @@ import { PCS_V2_START } from 'config/constants/info'
 import { PairDayDatasResponse } from '../types'
 import { mapPairDayData, fetchChartData } from '../helpers'
 
+/**
+ *
+ * @param skip
+ * @param address
+ * @returns
+ * @todo check this where this query execute (endpoint)
+ */
 const getPoolChartData = async (skip: number, address: string): Promise<{ data?: ChartEntry[]; error: boolean }> => {
 	try {
 		const query = gql`
