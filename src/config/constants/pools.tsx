@@ -1,3 +1,6 @@
+/**
+ * @fileoverview Tien 04/12/2022
+ */
 import Trans from 'components/Trans'
 import { VaultKey } from 'state/types'
 import { CHAIN_ID } from './networks'
@@ -8,7 +11,7 @@ const serializedTokens = serializeTokens()
 
 export const vaultPoolConfig = {
 	[VaultKey.CakeVault]: {
-		name: <Trans>Auto CAKE</Trans>,
+		name: <Trans>Auto ASA</Trans>,
 		description: <Trans>Automatic restaking</Trans>,
 		autoCompoundFrequency: 5000,
 		gasLimit: 380000,

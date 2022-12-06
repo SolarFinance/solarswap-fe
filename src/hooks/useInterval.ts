@@ -1,3 +1,6 @@
+/**
+ * @fileoverview Tien 05/12/2022
+ */
 import { useEffect, useRef } from 'react'
 
 export default function useInterval(callback: () => void, delay: null | number, leading = true) {

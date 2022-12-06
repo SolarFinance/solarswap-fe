@@ -2,7 +2,6 @@ import { Currency, CurrencyAmount, ETHER, JSBI, Pair, Percent, Price, TokenAmoun
 import { useCallback, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { PairState, usePair } from 'hooks/usePairs'
 import useTotalSupply from 'hooks/useTotalSupply'
 import { computeTradePriceBreakdown, warningSeverity } from 'utils/prices'
 import { useTradeExactOut } from 'hooks/Trades'
@@ -14,6 +13,7 @@ import tryParseAmount from 'utils/tryParseAmount'
 import { AppDispatch, AppState } from '../index'
 import { useCurrencyBalances } from '../wallet/hooks'
 import { Field, typeInput } from './actions'
+import { PairState, usePair } from 'hooks/usePairs'
 
 const ZERO = JSBI.BigInt(0)
 

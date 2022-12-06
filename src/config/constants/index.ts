@@ -1,3 +1,6 @@
+/**
+ * @fileoverview Tien 04/12/2022
+ */
 import { ChainId, JSBI, Percent, Token } from '@solarswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
 import { mainnetTokens, testnetTokens } from './tokens'
@@ -68,11 +71,7 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
 export const PINNED_PAIRS: {
 	readonly [chainId in ChainId]?: [Token, Token][]
 } = {
-	[ChainId.TESTNET]: [
-		[mainnetTokens.cake, mainnetTokens.wbnb],
-		[mainnetTokens.busd, mainnetTokens.usdt],
-		[mainnetTokens.dai, mainnetTokens.usdt]
-	]
+	[ChainId.TESTNET]: [[mainnetTokens.wasa, mainnetTokens.usdt]]
 }
 
 export const NetworkContextName = 'NETWORK'
@@ -101,7 +100,7 @@ export const BLOCKED_PRICE_IMPACT_NON_EXPERT: Percent = new Percent(JSBI.BigInt(
  * Make sure enough gas for the transaction.
  * @author tiendn
  * 02/12/2022
- * @todo verified later
+ * @todo verified exact number later
  */
 export const MIN_ASA: JSBI = JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(10)) // .00000001 ASA
 export const BETTER_TRADE_LESS_HOPS_THRESHOLD = new Percent(JSBI.BigInt(50), JSBI.BigInt(10000))
