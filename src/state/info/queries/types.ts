@@ -54,7 +54,7 @@ export interface TokenDayDatasResponse {
 export type SolarDayData = TokenDayData
 
 export interface SolarDayDatasResponse {
-	SolarDayDatas: SolarDayData[]
+	solarDayDatas: SolarDayData[]
 }
 
 export interface PairDayData {

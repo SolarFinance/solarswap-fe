@@ -16,7 +16,7 @@ export const vaultPoolConfig = {
 		autoCompoundFrequency: 5000,
 		gasLimit: 380000,
 		tokenImage: {
-			primarySrc: `/images/tokens/${tokens.cake.address}.svg`,
+			primarySrc: `/images/tokens/${tokens.wasa.address}.svg`,
 			secondarySrc: '/images/tokens/autorenew.svg'
 		}
 	}
@@ -25,8 +25,8 @@ export const vaultPoolConfig = {
 const pools: SerializedPoolConfig[] = [
 	{
 		sousId: 0,
-		stakingToken: serializedTokens.cake,
-		earningToken: serializedTokens.cake,
+		stakingToken: serializedTokens.wasa,
+		earningToken: serializedTokens.wasa,
 		contractAddress: {
 			11115: '0x47862AD34a6DC10d0dB988E56Ae8fE36818540Dc',
 			56: '0x73feaa1eE314F8c655E354234017bE2193C9E24E'

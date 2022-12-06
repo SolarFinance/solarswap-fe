@@ -1,7 +1,7 @@
 import { gql } from 'graphql-request'
 import { infoClient } from 'utils/graphql'
 import { ChartEntry } from 'state/info/types'
-import { PCS_V2_START } from 'config/constants/info'
+import { SS_START } from 'config/constants/info'
 import { PairDayDatasResponse } from '../types'
 import { mapPairDayData, fetchChartData } from '../helpers'
 
@@ -10,7 +10,6 @@ import { mapPairDayData, fetchChartData } from '../helpers'
  * @param skip
  * @param address
  * @returns
- * @todo check this where this query execute (endpoint)
  */
 const getPoolChartData = async (skip: number, address: string): Promise<{ data?: ChartEntry[]; error: boolean }> => {
 	try {
@@ -30,7 +29,7 @@ const getPoolChartData = async (skip: number, address: string): Promise<{ data?:
 			}
 		`
 		const { pairDayDatas } = await infoClient.request<PairDayDatasResponse>(query, {
-			startTime: PCS_V2_START,
+			startTime: SS_START,
 			skip,
 			address
 		})

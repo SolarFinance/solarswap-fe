@@ -1,4 +1,4 @@
-import { ONE_DAY_UNIX, PCS_V2_START } from 'config/constants/info'
+import { ONE_DAY_UNIX, SS_START } from 'config/constants/info'
 import { getUnixTime } from 'date-fns'
 import { TransactionType } from 'state/info/types'
 import { ChartEntry } from '../types'
@@ -108,7 +108,7 @@ export const fetchChartData = async (
 
 	const firstAvailableDayData = formattedDayDatas[availableDays[0]]
 	// fill in empty days ( there will be no day datas if no trades made that day )
-	let timestamp = firstAvailableDayData?.date ?? PCS_V2_START
+	let timestamp = firstAvailableDayData?.date ?? SS_START
 	let latestLiquidityUSD = firstAvailableDayData?.liquidityUSD ?? 0
 	const endTimestamp = getUnixTime(new Date())
 	while (timestamp < endTimestamp - ONE_DAY_UNIX) {

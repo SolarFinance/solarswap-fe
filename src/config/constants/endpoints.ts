@@ -15,7 +15,7 @@ export const SNAPSHOT_HUB_API = `${SNAPSHOT_BASE_URL}/api/message`
  */
 export const GRAPH_API_PREDICTION_V1 = 'https://api.thegraph.com/subgraphs/name/pancakeswap/prediction'
 
-export const INFO_CLIENT = 'https://graph.astranaut.dev/subgraphs/name/astradefi/exchange-v1-2'
-export const BLOCKS_CLIENT = 'https://graph.astranaut.dev/subgraphs/name/astradefi/blocks-v1-1'
+export const INFO_CLIENT = 'http://167.172.80.21:8000/subgraphs/name/solarswap/exchange-v4'
+export const BLOCKS_CLIENT = 'http://167.172.80.21:8000/subgraphs/name/solarswap/blocks-v1'
 export const GRAPH_API_NFTMARKET = process.env.NEXT_PUBLIC_GRAPH_API_NFT_MARKET
 export const GRAPH_HEALTH = 'https://api.thegraph.com/index-node/graphql'
