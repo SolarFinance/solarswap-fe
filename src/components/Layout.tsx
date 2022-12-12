@@ -36,9 +36,9 @@ const Layout: React.FC<Props> = props => {
 				<Footer logoTitle={process.env.NEXT_PUBLIC_TITLE} />
 				<div id="modal-root"></div>
 				<ToastWrapper />
-				<NormalButton onClick={() => registerToken('0x2AC90Bd2deE4841b99887623f982D72131Ca52F5', 'XUSD', 18)}>
+				{/* <NormalButton onClick={() => registerToken('0x2AC90Bd2deE4841b99887623f982D72131Ca52F5', 'XUSD', 18)}>
 					Register Token
-				</NormalButton>
+				</NormalButton> */}
 			</div>
 		</Suspense>
 	)

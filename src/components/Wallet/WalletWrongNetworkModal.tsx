@@ -4,13 +4,15 @@ import { Col, CryptoIcon, NormalButton, Row } from '@astraprotocol/astra-ui'
 import { init, useSetChain } from '@web3-onboard/react'
 import { useTranslation } from 'contexts/Localization'
 import { InjectedProps } from '../Modal/types'
+import decimalToHex from '../../utils/numberHelper'
 
 const WalletWrongNetworkModal: React.FC<InjectedProps> = ({ onDismiss }) => {
 	const { t } = useTranslation()
 	const [{ chains, connectedChain }, setChain] = useSetChain()
+	var chainId: string = process.env.NEXT_PUBLIC_CHAIN_ID || '11115'
 	const _changeChain = () => {
 		setChain({
-			chainId: '0x2b6b',
+			chainId: decimalToHex(parseInt(chainId)),
 			chainNamespace: 'evm'
 		})
 	}

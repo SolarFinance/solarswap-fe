@@ -92,7 +92,7 @@ export default function Navbar() {
 						disableModals: true
 					}
 				})
-				console.log('connected wallets: ', walletConnected)
+
 				if (isEmpty(walletConnected)) {
 					WalletHelper.removeCacheConnect()
 				}
