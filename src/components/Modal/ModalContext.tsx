@@ -1,7 +1,7 @@
 import { AnimatePresence, m, Variants, LazyMotion, domAnimation } from 'framer-motion'
 import React, { createContext, useState, useRef } from 'react'
 import { Handler } from './types'
-import styles from './style.module.scss'
+import styles from './styles.module.scss'
 import Overlay from 'components/Overlay'
 import clsx from 'clsx'
 import { useTheme } from 'next-themes'

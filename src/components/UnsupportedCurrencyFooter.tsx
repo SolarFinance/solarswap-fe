@@ -6,7 +6,7 @@ import { useTranslation } from 'contexts/Localization'
 // import { AutoColumn } from 'components/Layout/Column'
 import { CurrencyLogo } from 'components/Logo'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { getAstraScanLink } from 'utils'
+import { getAstraExplorerLink } from 'utils'
 import { wrappedCurrency } from 'utils/wrappedCurrency'
 import { useUnsupportedTokens } from '../hooks/Tokens'
 import { InjectedModalProps, Modal, useModal } from './Modal'
@@ -57,7 +57,7 @@ const UnsupportedModal: React.FC<Props> = ({ currencies, onDismiss }) => {
 										// external
 										small
 										color="primaryDark"
-										href={getAstraScanLink(token.address, 'address', chainId)}
+										href={getAstraExplorerLink(token.address, 'address', chainId)}
 									>
 										{token.address}
 									</Typography.Link>

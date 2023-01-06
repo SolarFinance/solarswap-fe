@@ -2,7 +2,7 @@ import { BlockIcon, CheckmarkCircleIcon, Flex, Link, OpenNewIcon, RefreshIcon } 
 import styled from 'styled-components'
 import { TransactionDetails } from 'state/transactions/reducer'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { getAstraScanLink } from 'utils'
+import { getAstraExplorerLink } from 'utils'
 
 interface TransactionRowProps {
   txn: TransactionDetails
@@ -51,13 +51,13 @@ const TransactionRow: React.FC<TransactionRowProps> = ({ txn }) => {
   }
 
   return (
-    <TxnLink href={getAstraScanLink(txn.hash, 'transaction', chainId)} external>
-      <TxnIcon>{renderIcon(txn)}</TxnIcon>
-      <Summary>{txn.summary ?? txn.hash}</Summary>
-      <TxnIcon>
-        <OpenNewIcon width="24px" color="primary" />
-      </TxnIcon>
-    </TxnLink>
+		<TxnLink href={getAstraExplorerLink(txn.hash, 'transaction', chainId)} external>
+			<TxnIcon>{renderIcon(txn)}</TxnIcon>
+			<Summary>{txn.summary ?? txn.hash}</Summary>
+			<TxnIcon>
+				<OpenNewIcon width="24px" color="primary" />
+			</TxnIcon>
+		</TxnLink>
   )
 }
 

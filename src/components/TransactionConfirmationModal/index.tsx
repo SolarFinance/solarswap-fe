@@ -7,7 +7,7 @@ import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { wrappedCurrency } from 'utils/wrappedCurrency'
 
 import { AutoColumn, ColumnCenter } from '../Layout/Column'
-import { getAstraScanLink } from '../../utils'
+import { getAstraExplorerLink } from '../../utils'
 import { InjectedModalProps, Modal } from 'components/Modal'
 import { CryptoIcon, Icon, IconEnum, NormalButton, Row, Typography } from '@astraprotocol/astra-ui'
 import Spinner from 'components/Loader/Spinner'
@@ -58,7 +58,7 @@ export function TransactionSubmittedContent({
 				<AutoColumn gap="12px" justify="center">
 					<span className="text text-base contrast-color-100">{t('Transaction Submitted')}</span>
 					{chainId && hash && (
-						<Typography.Link target="_blank" href={getAstraScanLink(hash, 'transaction', chainId)}>
+						<Typography.Link target="_blank" href={getAstraExplorerLink(hash, 'transaction', chainId)}>
 							{t('View on AstraExplorer')}
 						</Typography.Link>
 					)}

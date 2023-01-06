@@ -1,5 +1,5 @@
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { getAstraScanLink } from 'utils'
+import { getAstraExplorerLink } from 'utils'
 import { TransactionDetails } from 'state/transactions/reducer'
 // import CircleLoader from '../../Loader/CircleLoader'
 import { Typography } from '@astraprotocol/astra-ui'
@@ -32,7 +32,7 @@ export default function Transaction({ tx }: { tx: TransactionDetails }) {
 
 	return (
 		<div pending={pending} success={success}>
-			<Typography.Link href={getAstraScanLink(tx.hash, 'transaction', chainId)}>
+			<Typography.Link href={getAstraExplorerLink(tx.hash, 'transaction', chainId)}>
 				{summary ?? tx.hash}
 			</Typography.Link>
 
