@@ -98,7 +98,7 @@ function CurrencyRow({
 					{!isOnSelectedList && customAdded && 'Added by user •'} {currency.name}
 				</span>
 			</div>
-			<Row style={{ justifySelf: 'flex-end' }}>
+			<Row style={{ justifySelf: 'flex-end', alignItems: 'center' }}>
 				{balance ? <Balance balance={balance} /> : account ? <Spinner /> : null}
 			</Row>
 		</div>
@@ -164,7 +164,7 @@ export default function CurrencyList({
 								<span className="text text-xs contrast-color-100">
 									{t('Expanded results from inactive Token Lists')}
 								</span>
-								<QuestionHelper
+								
 									text={t(
 										"Tokens from inactive lists. Import specific tokens below or click 'Manage' to activate more lists."
 									)}

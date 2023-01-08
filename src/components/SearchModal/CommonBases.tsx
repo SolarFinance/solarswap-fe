@@ -20,7 +20,7 @@ export default function CommonBases({
 		<div className="margin-lg">
 			<div>
 				<span className="text text-sm contrast-color-100">{t('Common bases')}</span>
-				<QuestionHelper text={t('These tokens are commonly paired with other tokens.')} ml="4px" />
+				<QuestionHelper text={t('These tokens are commonly paired with other tokens.')} />
 			</div>
 			<div>
 				<div

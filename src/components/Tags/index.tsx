@@ -1,17 +1,16 @@
-import { Tag } from '@astraprotocol/astra-ui'
+import { Icon, IconEnum, Tag } from '@astraprotocol/astra-ui'
 import { useTranslation } from 'contexts/Localization'
+import { useTooltip } from 'hooks/useTooltip'
 import { memo } from 'react'
 
 const CoreTag = props => {
 	const { t } = useTranslation()
 	return (
-		<Tag
-			variant="primary"
-			outline
-			// startIcon={<Icon icon={IconEnum.ICON_CHECKED} width="18px" color="secondary" mr="4px" />}
-			{...props}
-		>
-			{t('Core')}
+		<Tag variant="primary" outline {...props}>
+			<div>
+				<Icon icon={IconEnum.ICON_CHECKED} classes="link-color-useful margin-right-2xs" />
+				{t('Core')}
+			</div>
 		</Tag>
 	)
 }
@@ -28,23 +27,22 @@ const FarmAuctionTagToolTipContent = memo(() => {
 
 const FarmAuctionTag = props => {
 	const { t } = useTranslation()
-	return null
-	// const { targetRef, tooltip, tooltipVisible } = useTooltip(<FarmAuctionTagToolTipContent />, { placement: 'right' })
-	// return (
-	// 	<>
-	// 		{tooltipVisible && tooltip}
-	// 		<TooltipText ref={targetRef} style={{ textDecoration: 'none' }}>
-	// 			<Tag
-	// 				variant="failure"
-	// 				outline
-	// 				startIcon={<CommunityIcon width="18px" color="failure" mr="4px" />}
-	// 				{...props}
-	// 			>
-	// 				{t('Farm Auction')}
-	// 			</Tag>
-	// 		</TooltipText>
-	// 	</>
-	// )
+	const { targetRef, tooltip, tooltipVisible } = useTooltip(<FarmAuctionTagToolTipContent />, { placement: 'right' })
+	return (
+		<>
+			{tooltipVisible && tooltip}
+			<span ref={targetRef} style={{ textDecoration: 'none' }}>
+				<Tag
+					variant="failure"
+					outline
+					// startIcon={<CommunityIcon width="18px" color="failure" mr="4px" />}
+					{...props}
+				>
+					{t('Farm Auction')}
+				</Tag>
+			</span>
+		</>
+	)
 }
 
 const CommunityTag = props => {

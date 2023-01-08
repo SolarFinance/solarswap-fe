@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useTranslation } from 'contexts/Localization'
 import { getApy } from 'utils/compoundApyHelpers'
-import { Icon, IconEnum, Typography } from '@astraprotocol/astra-ui'
+import { Icon, IconEnum, NormalButton, Row, Typography } from '@astraprotocol/astra-ui'
 import styles from './styles.module.scss'
 import { useTooltip } from 'hooks/useTooltip'
 
@@ -55,34 +55,43 @@ const RoiCalculatorFooter: React.FC<RoiCalculatorFooterProps> = ({
 	)
 
 	return (
-		<div className="flex padding-md col width-100" p="16px" flexDirection="column">
-			{/* <ExpandableLabel expanded={isExpanded} onClick={() => setIsExpanded(prev => !prev)}>
-				{isExpanded ? t('Hide') : t('Details')}
-			</ExpandableLabel> */}
+		<div className="flex padding-md col width-100 padding-lg">
+			<NormalButton variant="text" onClick={() => setIsExpanded(prev => !prev)}>
+				<span className="text text-base secondary-color-normal">{isExpanded ? t('Hide') : t('Details')}</span>
+				<Icon icon={isExpanded ? IconEnum.ICON_UP : IconEnum.ICON_DOWN} classes="secondary-color-normal" />
+			</NormalButton>
 			{isExpanded && (
-				<div>
+				<div className="same-bg-color-30 padding-xs radius-lg">
 					<div
-						gridTemplateColumns="2.5fr 1fr"
-						gridRowGap="8px"
-						gridTemplateRows={`repeat(${gridRowCount}, auto)`}
+						style={{
+							gridTemplateColumns: '2.5fr 1fr',
+							gridRowGap: 8,
+							gridTemplateRows: `repeat(${gridRowCount}, auto)`
+						}}
 					>
 						{isFarm && (
-							<>
-								<span className="text text-sm">{t('APR (incl. LP rewards)')}</span>
+							<Row style={{ justifyContent: 'space-between' }}>
+								<span className="text text-sm contrast-color-70">{t('APR (incl. LP rewards)')}</span>
 								<span className="text text-sm text-right">{displayApr}%</span>
-							</>
+							</Row>
 						)}
-						<span className="text text-sm">{isFarm ? t('Base APR (ASA yield only)') : t('APR')}</span>
-						<span className="text text-sm text-right">{apr.toFixed(2)}%</span>
-						<span className="text text-sm">
-							{t('APY (%compoundTimes%x daily compound)', {
-								compoundTimes: autoCompoundFrequency > 0 ? autoCompoundFrequency : 1
-							})}
-						</span>
-						<span className="text text-sm text-right">{apy}%</span>
+						<Row style={{ justifyContent: 'space-between' }}>
+							<span className="text text-sm contrast-color-70">
+								{isFarm ? t('Base APR (ASA yield only)') : t('APR')}
+							</span>
+							<span className="text text-sm text-right">{apr?.toFixed(2)}%</span>
+						</Row>
+						<Row style={{ justifyContent: 'space-between' }}>
+							<span className="text text-sm contrast-color-70">
+								{t('APY (%compoundTimes%x daily compound)', {
+									compoundTimes: autoCompoundFrequency > 0 ? autoCompoundFrequency : 1
+								})}
+							</span>
+							<span className="text text-sm text-right">{apy}%</span>
+						</Row>
 						{isFarm && (
-							<>
-								<span className="text text-sm">{t('Farm Multiplier')}</span>
+							<Row style={{ justifyContent: 'space-between' }}>
+								<span className="text text-sm contrast-color-70">{t('Farm Multiplier')}</span>
 								<div className="flex flex-justify-end flex-align-end">
 									<span className="text text-sm text-right margin-right-xs">{multiplier}</span>
 									<span ref={multiplierRef}>
@@ -90,32 +99,34 @@ const RoiCalculatorFooter: React.FC<RoiCalculatorFooterProps> = ({
 									</span>
 									{multiplierTooltipVisible && multiplierTooltip}
 								</div>
-							</>
+							</Row>
 						)}
 					</div>
 					<div className={styles.bulletList}>
-						<li>
-							<span className="text text-sm text-center">{t('Calculated based on current rates.')}</span>
+						<li className="contrast-color-70">
+							<span className="text text-sm text-center contrast-color-70">
+								{t('Calculated based on current rates.')}
+							</span>
 						</li>
 						{isFarm && (
-							<li>
-								<span className="text text-sm text-center">
+							<li className="contrast-color-70">
+								<span className="text text-sm text-center contrast-color-70">
 									{t(
 										'LP rewards: 0.2% trading fees, distributed proportionally among LP token holders.'
 									)}
 								</span>
 							</li>
 						)}
-						<li>
-							<span className="text text-sm text-center">
+						<li className="contrast-color-70">
+							<span className="text text-sm text-center contrast-color-70">
 								{t(
 									'All figures are estimates provided for your convenience only, and by no means represent guaranteed returns.'
 								)}
 							</span>
 						</li>
 						{performanceFee > 0 && (
-							<li>
-								<span mt="14px" fontSize="12px" textAlign="center" color="textSubtle" display="inline">
+							<li className="contrast-color-70">
+								<span className="text text-sm margin-top-sm text-center contrast-color-70">
 									{t('All estimated rates take into account this pool’s %fee%% performance fee', {
 										fee: performanceFee
 									})}
@@ -123,8 +134,11 @@ const RoiCalculatorFooter: React.FC<RoiCalculatorFooterProps> = ({
 							</li>
 						)}
 					</div>
-					<div className="flex flex-justify-center margin-top-lg">
-						<Typography.Link href={linkHref}>{linkLabel}</Typography.Link>
+					<div className="flex flex-justify-center margin-top-lg pointer">
+						<Typography.Link target="_blank" href={linkHref}>
+							{linkLabel}
+							<Icon icon={IconEnum.ICON_EXTERNAL_LINK} classes="margin-left-xs link-color-useful" />
+						</Typography.Link>
 					</div>
 				</div>
 			)}

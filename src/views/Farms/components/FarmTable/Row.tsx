@@ -115,13 +115,13 @@ const Row: React.FunctionComponent<RowPropsWithLoading> = props => {
 							</CellLayout>
 						</td>
 					</tr>
-					<tr>
-						<td className="padding-top-md padding-right-lg padding-bottom-md">
+					<tr className="flex flex-justify-center">
+						<td className="padding-top-md padding-right-lg padding-bottom-md ">
 							<CellLayout label={t('Earned')}>
 								<Earned {...props.earned} userDataReady={userDataReady} />
 							</CellLayout>
 						</td>
-						<td className="padding-top-md padding-bottom-lg">
+						<td className="padding-top-md padding-bottom-lg ">
 							<CellLayout label={t('APR')}>
 								<Apr {...props.apr} hideButton />
 							</CellLayout>

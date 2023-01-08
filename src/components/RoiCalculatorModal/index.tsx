@@ -201,7 +201,7 @@ const RoiCalculatorModal: React.FC<RoiCalculatorModalProps> = ({
 					setCalculatorMode={setCalculatorMode}
 				/>
 			</div>
-			{/* <RoiCalculatorFooter
+			<RoiCalculatorFooter
 				isFarm={isFarm}
 				apr={apr}
 				displayApr={displayApr}
@@ -210,7 +210,7 @@ const RoiCalculatorModal: React.FC<RoiCalculatorModalProps> = ({
 				linkLabel={linkLabel}
 				linkHref={linkHref}
 				performanceFee={performanceFee}
-			/> */}
+			/>
 		</Modal>
 	)
 }

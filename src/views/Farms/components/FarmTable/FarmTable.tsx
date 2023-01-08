@@ -41,8 +41,8 @@ const FarmTable: React.FC<ITableProps> = props => {
 						</tbody>
 					</table>
 				</div>
-				<div className="flex flex-justify-center padding-top-xs padding-bottom-xs">
-					<NormalButton variant="text" onClick={scrollToTop}>
+				<div className="flex flex-justify-center padding-top-xs padding-bottom-xs ">
+					<NormalButton variant="text" onClick={scrollToTop} classes={{ other: 'width-100' }}>
 						<span className="text text-base margin-right-xs">{t('To Top')}</span>
 						<Icon icon={IconEnum.ICON_UP} classes="text text-base" />
 					</NormalButton>

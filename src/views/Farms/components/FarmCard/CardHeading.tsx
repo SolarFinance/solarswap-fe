@@ -1,6 +1,8 @@
+import { Tag } from '@astraprotocol/astra-ui'
 import { Token } from '@solarswap/sdk'
-// import { FarmAuctionTag, CoreTag } from 'components/Tags'
-// import { TokenPairImage } from 'components/TokenImage'
+import { CoreTag, FarmAuctionTag } from 'components/Tags'
+import { TokenPairImage } from 'components/TokenImage'
+
 import Skeleton from 'react-loading-skeleton'
 
 export interface ExpandableSectionProps {
@@ -15,25 +17,21 @@ export interface ExpandableSectionProps {
 
 const CardHeading: React.FC<ExpandableSectionProps> = ({ lpLabel, multiplier, isCommunityFarm, token, quoteToken }) => {
 	return (
-		<div justifyContent="space-between" alignItems="center" mb="12px">
-			{/* <TokenPairImage
+		<div className="flex flex-justify-space-between flex-align-center">
+			<TokenPairImage
 				variant="inverted"
 				primaryToken={token}
 				secondaryToken={quoteToken}
 				width={64}
 				height={64}
-			/> */}
-			{/* <Flex flexDirection="column" alignItems="flex-end">
-				<Heading mb="4px">{lpLabel.split(' ')[0]}</Heading>
-				<Flex justifyContent="center">
+			/>
+			<div className="flex col flex-align-end">
+				<span className="text text-2xl">{lpLabel.split(' ')[0]}</span>
+				<div className="flex flex-justify-center">
 					{isCommunityFarm ? <FarmAuctionTag /> : <CoreTag />}
-					{multiplier ? (
-						<MultiplierTag variant="secondary">{multiplier}</MultiplierTag>
-					) : (
-						<Skeleton ml="4px" width={42} height={28} />
-					)}
-				</Flex>
-			</Flex> */}
+					{multiplier ? <Tag className="margin-left-xs">{multiplier}</Tag> : <Skeleton />}
+				</div>
+			</div>
 		</div>
 	)
 }

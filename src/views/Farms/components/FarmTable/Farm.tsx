@@ -4,6 +4,7 @@ import { Token } from '@solarswap/sdk'
 import { getBalanceNumber } from 'utils/formatBalance'
 import styles from './styles.module.scss'
 import { TokenPairImage } from 'components/TokenImage'
+import useMatchBreakpoints from 'hooks/useMatchBreakpoints'
 
 export interface FarmProps {
 	label: string
@@ -13,6 +14,7 @@ export interface FarmProps {
 }
 
 const Farm: React.FunctionComponent<FarmProps> = ({ token, quoteToken, label, pid }) => {
+	const { isMobile } = useMatchBreakpoints()
 	const { stakedBalance } = useFarmUser(pid)
 	const { t } = useTranslation()
 	const rawStakedBalance = getBalanceNumber(stakedBalance)
@@ -36,7 +38,7 @@ const Farm: React.FunctionComponent<FarmProps> = ({ token, quoteToken, label, pi
 					height={40}
 				/>
 			</div>
-			<div className="margin-left-xs">
+			<div className={isMobile ? 'margin-left-lg' : 'margin-left-xs'}>
 				{handleRenderFarming()}
 				<span className="text text-base text-bold">{label}</span>
 			</div>

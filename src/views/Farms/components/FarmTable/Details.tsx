@@ -14,11 +14,11 @@ const Details: React.FC<DetailsProps> = ({ actionPanelToggled }) => {
 
 	return (
 		<div className={styles.detailContainer}>
-			{!isDesktop && <span className="text text-base">{t('Details')}</span>}
+			{!isDesktop && <span className="text text-base secondary-color-normal">{t('Details')}</span>}
 			<Icon
 				icon={IconEnum.ICON_ARROW_DOWN}
-				color="primary"
 				className={clsx(styles.iconArrow, { [styles.toggled]: actionPanelToggled })}
+				classes="secondary-color-normal"
 			/>
 		</div>
 	)

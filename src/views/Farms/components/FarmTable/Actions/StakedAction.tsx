@@ -20,7 +20,7 @@ import { FarmWithStakedValue } from '../../types'
 import StakedLP from '../../StakedLP'
 import ToastDescriptionWithTx from 'components/ToastDescriptionWithTx'
 import { useModal } from 'components/Modal'
-import { IconButton, IconEnum, NormalButton, withToast } from '@astraprotocol/astra-ui'
+import { IconButton, IconEnum, NormalButton, Spinner, withToast } from '@astraprotocol/astra-ui'
 import ButtonConnect from 'components/ButtonConnect'
 import styles from './styles.module.scss'
 import Skeleton from 'react-loading-skeleton'
@@ -229,11 +229,18 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
 	return (
 		<div className={styles.actionContainer}>
 			<div className="flex">
-				<span className="text text-sm text-bold text-uppercase contrast-color-70">{t('Enable Farm')}</span>
+				<span className="text text-sm text-bold text-uppercase contrast-color-70 margin-bottom-xs">
+					{t('Enable Farm')}
+				</span>
 			</div>
 			<div className="flex flex-justify-space-between flex-align-center">
-				<NormalButton classes={{ other: 'width-100' }} disabled={pendingTx} onClick={handleApprove}>
-					<span className="text text-base">{t('Enable')}</span>
+				<NormalButton
+					classes={{ other: 'width-100 row flex-justify-center' }}
+					disabled={pendingTx}
+					onClick={handleApprove}
+				>
+					<span className="text text-base  margin-right-sm">{t('Enable')}</span>
+					{pendingTx && <Spinner />}
 				</NormalButton>
 			</div>
 		</div>

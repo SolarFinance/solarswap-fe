@@ -28,6 +28,8 @@ import { RowProps } from './components/FarmTable/Row'
 import { DesktopColumnSchema, FarmWithStakedValue } from './components/types'
 import Image from 'next/image'
 import styles from './styles.module.scss'
+import useMatchBreakpoints from 'hooks/useMatchBreakpoints'
+import clsx from 'clsx'
 
 const NUMBER_OF_FARMS_VISIBLE = 12
 
@@ -52,6 +54,7 @@ const Farms: React.FC = ({ children }) => {
 	const [sortOption, setSortOption] = useState('hot')
 	const { observerRef, isIntersecting } = useIntersectionObserver()
 	const chosenFarmsLength = useRef(0)
+	const { isMobile } = useMatchBreakpoints()
 
 	const isArchived = pathname.includes('archived')
 	const isInactive = pathname.includes('history')
@@ -265,7 +268,7 @@ const Farms: React.FC = ({ children }) => {
 			return <Table data={rowData} columns={columns} userDataReady={userDataReady} />
 		}
 
-		return <FlexLayout>{children}</FlexLayout>
+		return <div className="flex">{children}</div>
 	}
 
 	const handleSortOptionChange = (option: OptionProps): void => {
@@ -275,7 +278,12 @@ const Farms: React.FC = ({ children }) => {
 	return (
 		<FarmsContext.Provider value={{ chosenFarmsMemoized }}>
 			<Container>
-				<div className="col padding-top-xl padding-bottom-xl padding-left-lg padding-right-lg">
+				<div
+					className={clsx('col', {
+						['padding-top-xl padding-bottom-xl padding-left-lg padding-right-lg']: !isMobile,
+						['padding-top-lg padding-bottom-lg padding-left-2xs padding-right-2xs']: isMobile
+					})}
+				>
 					<span className="text text-4xl text-bold secondary-color-normal">{t('Farms')}</span>
 					<span className="text text-xl">{t('Stake LP tokens to earn.')}</span>
 				</div>
