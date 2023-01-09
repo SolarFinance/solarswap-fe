@@ -4,6 +4,7 @@ import { getApy } from 'utils/compoundApyHelpers'
 import { Icon, IconEnum, NormalButton, Row, Typography } from '@astraprotocol/astra-ui'
 import styles from './styles.module.scss'
 import { useTooltip } from 'hooks/useTooltip'
+import clsx from 'clsx'
 
 interface RoiCalculatorFooterProps {
 	isFarm: boolean
@@ -61,7 +62,7 @@ const RoiCalculatorFooter: React.FC<RoiCalculatorFooterProps> = ({
 				<Icon icon={isExpanded ? IconEnum.ICON_UP : IconEnum.ICON_DOWN} classes="secondary-color-normal" />
 			</NormalButton>
 			{isExpanded && (
-				<div className="same-bg-color-30 padding-xs radius-lg">
+				<div className={clsx(styles.roiCalculatorFooter, 'same-bg-color-30 padding-xs radius-lg')}>
 					<div
 						style={{
 							gridTemplateColumns: '2.5fr 1fr',
