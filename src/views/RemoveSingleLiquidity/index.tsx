@@ -42,6 +42,7 @@ import ConfirmSingleLiquidityModal from '../Swap/components/ConfirmRemoveSingleL
 import { logError } from '../../utils/sentry'
 import Page from 'components/Layout/Page'
 import Link from 'next/link'
+import useMatchBreakpoints from 'hooks/useMatchBreakpoints'
 
 // const BorderCard = styled.div`
 //   border: solid 1px ${({ theme }) => theme.colors.cardBorder};
@@ -62,6 +63,8 @@ export default function RemoveLiquidity() {
 	const [currencyIdA, currencyIdB] = router.query.currency || []
 	const [currencyA, currencyB] = [useCurrency(currencyIdA) ?? undefined, useCurrency(currencyIdB) ?? undefined]
 	const { account, chainId, library } = useActiveWeb3React()
+	const { isMobile } = useMatchBreakpoints()
+
 	const [tokenA, tokenB] = useMemo(
 		() => [wrappedCurrency(currencyA, chainId), wrappedCurrency(currencyB, chainId)],
 		[currencyA, currencyB, chainId]
@@ -342,7 +345,14 @@ export default function RemoveLiquidity() {
 				<AppBody className="border border-base radius-lg">
 					<AppHeader
 						backTo="/liquidity"
-						title={t('Remove liquidity')}
+						title={
+							isMobile
+								? t('Remove liquidity')
+								: t('Remove %assetA%-%assetB% liquidity', {
+										assetA: currencyA?.symbol ?? '',
+										assetB: currencyB?.symbol ?? ''
+								  })
+						}
 						subtitle={t('To receive %assetA% and %assetB%', {
 							assetA: currencyA?.symbol ?? '',
 							assetB: currencyB?.symbol ?? ''

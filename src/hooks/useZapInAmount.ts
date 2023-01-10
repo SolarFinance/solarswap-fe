@@ -1,10 +1,10 @@
 import { ZAP_ADDRESS } from 'config/constants'
 import { CHAIN_ID } from 'config/constants/networks'
-import { useZapInContract } from './useContract'
+import { useZapContract } from './useContract'
 import { useSingleCallResult } from '../state/multicall/hooks'
 
 function useZapInAmount(tokenA: string, tokenB: string, pool: string, userIn: string): [string, string] {
-	const zapInContract = useZapInContract(ZAP_ADDRESS[CHAIN_ID], false)
+	const zapInContract = useZapContract(ZAP_ADDRESS[CHAIN_ID], false)
 
 	const { result } = useSingleCallResult(zapInContract, 'calculateZapInAmounts', [
 		tokenA,
