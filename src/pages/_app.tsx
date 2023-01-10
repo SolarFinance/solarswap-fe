@@ -162,11 +162,14 @@ const ProductionErrorBoundary = process.env.NODE_ENV === 'production' ? ErrorBou
 
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
 	// Use the layout defined at the page level, if available
+	const ComponentLayout = Component.Layout || Fragment
 	return (
 		<ProductionErrorBoundary>
 			{/* <Menu> */}
 			<Layout>
-				<Component {...pageProps} />
+				<ComponentLayout>
+					<Component {...pageProps} />
+				</ComponentLayout>
 			</Layout>
 			{/* </Menu> */}
 			{/* <EasterEgg iterations={2} /> */}

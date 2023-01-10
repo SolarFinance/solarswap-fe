@@ -1,3 +1,4 @@
+import { Icon, IconEnum, Typography } from '@astraprotocol/astra-ui'
 import { useTranslation } from 'contexts/Localization'
 import Skeleton from 'react-loading-skeleton'
 
@@ -31,18 +32,32 @@ const DetailsSection: React.FC<ExpandableSectionProps> = ({
 	return (
 		<div className="margin-top-lg">
 			<div className="flex flex-justify-space-between">
-				<span className="text text-sm">{t('Total Liquidity')}:</span>
+				<span className="text text-base">{t('Total Liquidity')}:</span>
 				{totalValueFormatted ? (
-					<span className="text text-sm">{totalValueFormatted}</span>
+					<span className="money money-sm">{totalValueFormatted}</span>
 				) : (
 					<Skeleton width={75} height={25} />
 				)}
 			</div>
-			{/* {!removed && (
-        <StyledLinkExternal href={addLiquidityUrl}>{t('Get %symbol%', { symbol: lpLabel })}</StyledLinkExternal>
-      )}
-      <StyledLinkExternal href={bscScanAddress}>{t('View Contract')}</StyledLinkExternal>
-      <StyledLinkExternal href={infoAddress}>{t('See Pair Info')}</StyledLinkExternal> */}
+			<div>
+				{!removed && (
+					<div>
+						<Typography.Link target="_blank" href={addLiquidityUrl}>
+							{t('Get %symbol%', { symbol: lpLabel })}
+							<Icon icon={IconEnum.ICON_EXTERNAL_LINK} classes="margin-left-xs link-color-useful" />
+						</Typography.Link>
+					</div>
+				)}
+				<Typography.Link target="_blank" href={bscScanAddress}>
+					{t('View Contract')}
+					<Icon icon={IconEnum.ICON_EXTERNAL_LINK} classes="margin-left-xs link-color-useful" />
+				</Typography.Link>
+				<br />
+				<Typography.Link target="_blank" href={infoAddress}>
+					{t('See Pair Info')}
+					<Icon icon={IconEnum.ICON_EXTERNAL_LINK} classes="margin-left-xs link-color-useful" />
+				</Typography.Link>
+			</div>
 		</div>
 	)
 }

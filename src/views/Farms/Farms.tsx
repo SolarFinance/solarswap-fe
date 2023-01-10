@@ -4,7 +4,6 @@ import { useWeb3React } from '@web3-react/core'
 
 import { ChainId } from '@solarswap/sdk'
 
-import FlexLayout from 'components/Layout/Flex'
 import Page from 'components/Layout/Page'
 import { useFarms, usePollFarmsWithUserData, usePriceAstraBusd } from 'state/farms/hooks'
 import useIntersectionObserver from 'hooks/useIntersectionObserver'
@@ -68,7 +67,7 @@ const Farms: React.FC = ({ children }) => {
 
 	const [stakedOnly, setStakedOnly] = useUserFarmStakedOnly(isActive)
 
-	// console.log('farmsLP :>> ', farmsLP)
+	console.log('farmsLP :>> ', farmsLP)
 
 	const activeFarms = farmsLP.filter(
 		farm =>
@@ -268,7 +267,7 @@ const Farms: React.FC = ({ children }) => {
 			return <Table data={rowData} columns={columns} userDataReady={userDataReady} />
 		}
 
-		return <div className="flex">{children}</div>
+		return <div className="flex flex-justify-center">{children}</div>
 	}
 
 	const handleSortOptionChange = (option: OptionProps): void => {

@@ -3,6 +3,7 @@ import { TokenPairImageProps, variants } from './types'
 import Wrapper from './Wrapper'
 import TokenImage from './TokenImage'
 import styles from './styles.module.scss'
+import clsx from 'clsx'
 
 const TokenPairImage: React.FC<TokenPairImageProps> = ({
 	primarySrc,
@@ -19,16 +20,14 @@ const TokenPairImage: React.FC<TokenPairImageProps> = ({
 	return (
 		<Wrapper width={width} height={height} {...props}>
 			<TokenImage
-				className={styles.primaryImage}
-				variant={variant}
+				className={clsx(styles.primaryImage, { [styles.inverted]: variant == variants.INVERTED })}
 				src={primarySrc}
 				width={width / 1.5}
 				height={height / 1.5}
 				{...primaryImageProps}
 			/>
 			<TokenImage
-				className={styles.secondaryImage}
-				variant={variant}
+				className={clsx(styles.secondaryImage, { [styles.inverted]: variant == variants.INVERTED })}
 				src={secondarySrc}
 				width={secondaryImageSize}
 				height={secondaryImageSize}

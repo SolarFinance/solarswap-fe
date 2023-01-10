@@ -13,6 +13,7 @@ import { FarmWithStakedValue } from '../types'
 import CardActionsContainer from './CardActionsContainer'
 import ApyButton from './ApyButton'
 import Skeleton from 'react-loading-skeleton'
+import ExpandableSectionButton from 'components/ExpandableSectionButton'
 
 // const StyledCard = styled(Card)`
 // 	align-self: baseline;
@@ -60,7 +61,10 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, displayApr, removed, astraPri
 	const isPromotedFarm = farm.token.symbol === 'WASA'
 
 	return (
-		<div isActive={isPromotedFarm}>
+		<div
+			className="border border-base border-bottom-lg radius-lg same-bg-color-20"
+			style={{ alignSelf: 'baseline', minWidth: 320 }}
+		>
 			<div className="flex col flex-justify-space-around padding-lg">
 				<CardHeading
 					lpLabel={lpLabel}
@@ -71,7 +75,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, displayApr, removed, astraPri
 				/>
 				{!removed && (
 					<div className="flex flex-justify-space-between flex-align-center">
-						<span className="text">{t('APR')}:</span>
+						<span className="text text-base">{t('APR')}:</span>
 						<span className="text text-center text-bold flex flex-align-center">
 							{farm.apr ? (
 								<ApyButton
@@ -86,7 +90,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, displayApr, removed, astraPri
 									displayApr={displayApr}
 								/>
 							) : (
-								<Skeleton height={24} width={80} />
+								<Skeleton baseColor="#312e39" height={24} width={80} />
 							)}
 						</span>
 					</div>
@@ -103,12 +107,11 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, displayApr, removed, astraPri
 					displayApr={displayApr}
 				/>
 			</div>
-
 			<div className="padding-lg border border-top-lg" style={{ overflow: 'hidden' }}>
-				{/* <ExpandableSectionButton
+				<ExpandableSectionButton
 					onClick={() => setShowExpandableSection(!showExpandableSection)}
 					expanded={showExpandableSection}
-				/> */}
+				/>
 				{showExpandableSection && (
 					<DetailsSection
 						removed={removed}

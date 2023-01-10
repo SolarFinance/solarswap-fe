@@ -63,14 +63,16 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, account, addLiquidi
 	}
 
 	return (
-		<div className="padding-top-md">
+		<div className="margin-top-md">
 			<div className="flex">
-				<span className="text text-xs text-bold text-uppercase padding-right-xs contrast-color-70">ASA</span>
+				<span className="text text-xs text-bold text-uppercase padding-right-xs secondary-color-normal">
+					ASA
+				</span>
 				<span className="text text-xs text-bold text-uppercase contrast-color-70">{t('Earned')}</span>
 			</div>
 			<HarvestAction earnings={earnings} pid={pid} />
-			<div className="flex">
-				<span className="text text-xs text-bold text-uppercase padding-right-xs contrast-color-70">
+			<div className="flex margin-bottom-md">
+				<span className="text text-xs text-bold text-uppercase padding-right-xs secondary-color-normal">
 					{farm.lpSymbol}
 				</span>
 				<span className="text text-xs text-bold text-uppercase contrast-color-70">{t('Staked')}</span>

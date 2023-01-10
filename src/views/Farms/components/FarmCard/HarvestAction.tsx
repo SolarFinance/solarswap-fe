@@ -37,7 +37,7 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
 				</span>
 				{earningsBusd > 0 && (
 					<Balance
-						className="text-sm contrast-color-70"
+						className="money-sm contrast-color-70"
 						decimals={2}
 						value={earningsBusd}
 						unit=" USD"
@@ -46,6 +46,7 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
 				)}
 			</div>
 			<NormalButton
+				variant="default"
 				disabled={rawEarningsBalance.eq(0) || pendingTx}
 				onClick={async () => {
 					const receipt = await fetchWithCatchTxError(() => {

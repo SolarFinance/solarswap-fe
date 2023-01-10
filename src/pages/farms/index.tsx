@@ -11,7 +11,7 @@ const FarmsPage = () => {
 	const astraPrice = usePriceAstraBusd()
 
 	return (
-		<FarmsPageLayout>
+		<>
 			{chosenFarmsMemoized.map(farm => (
 				<FarmCard
 					key={farm.pid}
@@ -22,8 +22,10 @@ const FarmsPage = () => {
 					removed={false}
 				/>
 			))}
-		</FarmsPageLayout>
+		</>
 	)
 }
+
+FarmsPage.Layout = FarmsPageLayout
 
 export default FarmsPage

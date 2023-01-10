@@ -17,7 +17,7 @@ export interface ExpandableSectionProps {
 
 const CardHeading: React.FC<ExpandableSectionProps> = ({ lpLabel, multiplier, isCommunityFarm, token, quoteToken }) => {
 	return (
-		<div className="flex flex-justify-space-between flex-align-center">
+		<div className="flex flex-justify-space-between flex-align-center margin-bottom-sm">
 			<TokenPairImage
 				variant="inverted"
 				primaryToken={token}

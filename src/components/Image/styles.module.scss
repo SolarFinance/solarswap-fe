@@ -1,6 +1,6 @@
 .wrapper {
 	position: relative;
-	width: 100%;
+	// width: 100%;
 
 	&:after {
 		content: '';
@@ -41,20 +41,20 @@
 
 .primaryImage {
   position: absolute;
-  width: "92%" ; // 92, 82 are arbitrary numbers to fit the variant
-  bottom: "auto";
+  width: 92% ; // 92, 82 are arbitrary numbers to fit the variant
+  bottom: auto;
   left: 0;
-  right: "auto";
+  right: auto;
   top: 0;
-  z-index: 5;
+  z-index: 1;
 
   &.inverted {
-    width: "82%";
+    width: 82%;
     bottom: 0;
-    left: "auto";
+    left: auto;
     right: 0;
-    top: "auto";
-    z-index: 6;
+    top: 15px;
+    z-index: 2;
   }
 }
 
@@ -62,16 +62,16 @@
   position: absolute;
   width: 50%;
   bottom: 0;
-  left: "auto";
+  left: auto;
   right: 0;
-  top: "auto";
-  z-index: 6;
+  top: auto;
+  z-index: 2;
   
   &.inverted {
-    bottom: "auto";
+    bottom: auto;
     left: 0;
-    right: "auto";
+    right: auto;
     top: 0;
-    z-index: 5;
+    z-index: 1;
   }
 }

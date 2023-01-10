@@ -6,11 +6,9 @@ import { memo } from 'react'
 const CoreTag = props => {
 	const { t } = useTranslation()
 	return (
-		<Tag variant="primary" outline {...props}>
-			<div>
-				<Icon icon={IconEnum.ICON_CHECKED} classes="link-color-useful margin-right-2xs" />
-				{t('Core')}
-			</div>
+		<Tag scale="xs" variant="primary" outline {...props}>
+			<Icon icon={IconEnum.ICON_CHECKED} classes="link-color-useful margin-right-2xs" />
+			{t('Core')}
 		</Tag>
 	)
 }
