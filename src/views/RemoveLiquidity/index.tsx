@@ -717,7 +717,7 @@ export default function RemoveLiquidity() {
 											!isValid || (signatureData === null && approval !== ApprovalState.APPROVED)
 										}
 									>
-										{error || t('Remove')}
+										{error || t('Remove liquidity')}
 									</NormalButton>
 								</Row>
 							)}

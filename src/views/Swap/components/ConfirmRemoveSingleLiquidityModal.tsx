@@ -1,7 +1,5 @@
 import React, { useCallback } from 'react'
-import { Currency, CurrencyAmount, Pair, Percent, Token, TokenAmount } from '@solarswap/sdk'
-// import { Text } from '@solarswap/uikit'
-import { withToast, Row, Icon, NormalButton } from '@astraprotocol/astra-ui'
+import { Row, NormalButton } from '@astraprotocol/astra-ui'
 import { useTranslation } from 'contexts/Localization'
 import TransactionConfirmationModal, {
 	ConfirmationModalContent,

@@ -20,7 +20,7 @@ import ButtonConnect from 'components/ButtonConnect'
 import { LightGreyCard } from '../../components/Card'
 
 import { CurrencyLogo } from '../../components/Logo'
-import { ZAPIN_ADDRESS } from '../../config/constants'
+import { ZAP_ADDRESS } from '../../config/constants'
 import useActiveWeb3React from '../../hooks/useActiveWeb3React'
 import { useCurrency } from '../../hooks/Tokens'
 import { usePairContract } from '../../hooks/useContract'
@@ -128,7 +128,7 @@ export default function RemoveLiquidity() {
 	const [signatureData, setSignatureData] = useState<{ v: number; r: string; s: string; deadline: number } | null>(
 		null
 	)
-	const [approval, approveCallback] = useApproveCallback(parsedAmounts[Field.LIQUIDITY], ZAPIN_ADDRESS[CHAIN_ID])
+	const [approval, approveCallback] = useApproveCallback(parsedAmounts[Field.LIQUIDITY], ZAP_ADDRESS[CHAIN_ID])
 
 	// check if user has gone through approval process, used to show two step buttons, reset on token change
 	const [approvalSubmitted, setApprovalSubmitted] = useState<boolean>(false)
@@ -614,7 +614,7 @@ export default function RemoveLiquidity() {
 												? t('Price Impact High')
 												: priceImpactSeverity > 2
 												? t('Remove Anyway')
-												: t('Remove'))}
+												: t('Remove liquidity'))}
 									</NormalButton>
 								</Row>
 							) : (
@@ -651,7 +651,7 @@ export default function RemoveLiquidity() {
 											? t('Price Impact High')
 											: priceImpactSeverity > 2
 											? t('Remove Anyway')
-											: t('Remove'))}
+											: t('Remove liquidity'))}
 								</NormalButton>
 							)}
 						</div>

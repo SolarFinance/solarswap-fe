@@ -23,7 +23,7 @@ import { MinimalPositionCard } from '../../components/PositionCard'
 // import ConnectWalletButton from '../../components/ConnectWalletButton'
 import ButtonConnect from 'components/ButtonConnect'
 
-import { ZAPIN_ADDRESS } from '../../config/constants'
+import { ZAP_ADDRESS } from '../../config/constants'
 import { PairState } from '../../hooks/usePairs'
 import { useCurrency } from '../../hooks/Tokens'
 import { ApprovalState, useApproveCallback } from '../../hooks/useApproveCallback'
@@ -144,8 +144,8 @@ export default function AddLiquiditySingle() {
 	)
 
 	// check whether the user has approved the router on the tokens
-	const [approvalA, approveACallback] = useApproveCallback(parsedAmounts[Field.CURRENCY_A], ZAPIN_ADDRESS[CHAIN_ID])
-	const [approvalB, approveBCallback] = useApproveCallback(parsedAmounts[Field.CURRENCY_B], ZAPIN_ADDRESS[CHAIN_ID])
+	const [approvalA, approveACallback] = useApproveCallback(parsedAmounts[Field.CURRENCY_A], ZAP_ADDRESS[CHAIN_ID])
+	const [approvalB, approveBCallback] = useApproveCallback(parsedAmounts[Field.CURRENCY_B], ZAP_ADDRESS[CHAIN_ID])
 
 	const addTransaction = useTransactionAdder()
 
