@@ -35,6 +35,14 @@ export const mainnetTokens = defineTokens({
 		'USDT',
 		'Tether USD',
 		'https://tether.to/'
+	),
+	syrup: new Token(
+		MAINNET,
+		'0x009cF7bC57584b7998236eff51b98A168DceA9B0',
+		18,
+		'SYRUP',
+		'SyrupBar Token',
+		'https://solarswap.io/'
 	)
 	// bnb here points to the wbnb contract. Wherever the currency BNB is required, conditional checks for the symbol 'BNB' can be used
 	// bnb: new Token(MAINNET, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'BNB', 'BNB', 'https://www.binance.com/')
@@ -57,6 +65,14 @@ export const testnetTokens = defineTokens({
 		'USDT',
 		'Tether USD',
 		'https://tether.to/'
+	),
+	syrup: new Token(
+		TESTNET,
+		'0x860cdE74b376940dA84680AfD24cCFE3F89d0178',
+		18,
+		'SYRUP',
+		'SyrupBar Token',
+		'https://solarswap.io/'
 	)
 } as const)
 

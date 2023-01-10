@@ -17,4 +17,5 @@ export interface ModalProps extends InjectedProps {
 	headerBackground?: string
 	minWidth?: string
 	style?: React.CSSProperties
+	className?: string
 }

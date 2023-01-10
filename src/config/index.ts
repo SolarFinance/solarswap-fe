@@ -35,4 +35,4 @@ export const RECLAIM_AUCTIONS_TO_FETCH = 500
 export const AUCTION_WHITELISTED_BIDDERS_TO_FETCH = 500
 export const IPFS_GATEWAY = 'https://ipfs.io/ipfs'
 
-export const WALLET_CONNECT_RELAY = 'wc-relay.astranaut.dev'
+export const WALLET_CONNECT_RELAY = process.env.WALLET_CONNECT_RELAY
