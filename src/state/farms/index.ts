@@ -148,21 +148,20 @@ export const farmsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(resetUserState, (state) => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      state.data = state.data.map((farm) => {
-        return {
-          ...farm,
-          userData: {
-            allowance: '0',
-            tokenBalance: '0',
-            stakedBalance: '0',
-            earnings: '0',
-          },
-        }
-      })
-      state.userDataLoaded = false
-    })
+    builder.addCase(resetUserState, state => {
+		state.data = state.data.map(farm => {
+			return {
+				...farm,
+				userData: {
+					allowance: '0',
+					tokenBalance: '0',
+					stakedBalance: '0',
+					earnings: '0'
+				}
+			}
+		})
+		state.userDataLoaded = false
+	})
     // Update farms with live data
     builder.addCase(fetchFarmsPublicDataAsync.fulfilled, (state, action) => {
       const [farmPayload, poolLength] = action.payload

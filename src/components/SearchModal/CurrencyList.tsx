@@ -164,11 +164,10 @@ export default function CurrencyList({
 								<span className="text text-xs contrast-color-100">
 									{t('Expanded results from inactive Token Lists')}
 								</span>
-								
+								<QuestionHelper
 									text={t(
 										"Tokens from inactive lists. Import specific tokens below or click 'Manage' to activate more lists."
 									)}
-									ml="4px"
 								/>
 							</Row>
 						</div>

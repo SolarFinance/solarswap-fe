@@ -3,7 +3,8 @@ import GlobalSettings from 'components/Menu/GlobalSettings'
 import Link from 'next/link'
 import Transactions from './Transactions'
 import QuestionHelper from '../QuestionHelper'
-import { Icon, IconButton, IconEnum } from '@astraprotocol/astra-ui'
+import { Icon, IconEnum } from '@astraprotocol/astra-ui'
+import NotificationDot from 'components/NotificationDot'
 
 interface Props {
 	title: string
@@ -13,13 +14,6 @@ interface Props {
 	noConfig?: boolean
 }
 
-// const AppHeaderContainer = styled(Flex)`
-//   align-items: center;
-//   justify-content: space-between;
-//   padding: 24px;
-//   width: 100%;
-//   border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
-// `
 
 const AppHeader: React.FC<Props> = ({ title, subtitle, helper, backTo, noConfig = false }) => {
 	const [expertMode] = useExpertModeManager()
@@ -33,14 +27,10 @@ const AppHeader: React.FC<Props> = ({ title, subtitle, helper, backTo, noConfig 
 					</Link>
 				)}
 				<div>
-					<span as="h2" mb="8px">
-						{title}
-					</span>
+					<span className="text text-lg margin-bottom-xs">{title}</span>
 					<div className="flex flex-align-center">
-						{helper && <QuestionHelper text={helper} mr="4px" placement="top-start" />}
-						<Text color="textSubtle" fontSize="14px">
-							{subtitle}
-						</Text>
+						{helper && <QuestionHelper text={helper} placement="top-start" />}
+						<span className="text text-base">{subtitle}</span>
 					</div>
 				</div>
 			</div>

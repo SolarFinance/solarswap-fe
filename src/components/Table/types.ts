@@ -1,41 +1,39 @@
 export type ColumnType<T> = {
-  name: string;
-  label?: string;
-  hidden?: boolean;
-  sort?: ((a: RowType<T>, b: RowType<T>) => number) | undefined;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  render?: ({ value, row }: { value: any; row: T }) => React.ReactNode;
-  headerRender?: HeaderRenderType;
-};
+	name: string
+	label?: string
+	hidden?: boolean
+	sort?: ((a: RowType<T>, b: RowType<T>) => number) | undefined
+	render?: ({ value, row }: { value: any; row: T }) => React.ReactNode
+	headerRender?: HeaderRenderType
+}
 
 export type ColumnStateType<T> = {
-  name: string;
-  label: string;
-  hidden: boolean;
-  sort?: ((a: RowType<T>, b: RowType<T>) => number) | undefined;
-  sorted: {
-    on: boolean;
-    asc?: boolean;
-  };
-  headerRender?: HeaderRenderType;
-};
+	name: string
+	label: string
+	hidden: boolean
+	sort?: ((a: RowType<T>, b: RowType<T>) => number) | undefined
+	sorted: {
+		on: boolean
+		asc?: boolean
+	}
+	headerRender?: HeaderRenderType
+}
 
-export type HeaderRenderType = ({ label }: { label: React.ReactNode }) => React.ReactNode;
+export type HeaderRenderType = ({ label }: { label: React.ReactNode }) => React.ReactNode
 
 // this is the type saved as state and returned
 export type HeaderType<T> = {
-  name: string;
-  label?: string;
-  hidden?: boolean;
-  sorted: {
-    on: boolean;
-    asc?: boolean;
-  };
-  sort?: ((a: RowType<T>, b: RowType<T>) => number) | undefined;
-  render: () => React.ReactNode;
-};
+	name: string
+	label?: string
+	hidden?: boolean
+	sorted: {
+		on: boolean
+		asc?: boolean
+	}
+	sort?: ((a: RowType<T>, b: RowType<T>) => number) | undefined
+	render: () => React.ReactNode
+}
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type DataType = { [key: string]: any };
 
 export type ColumnByNamesType<T> = {
@@ -45,10 +43,9 @@ export type ColumnByNamesType<T> = {
 export type RenderFunctionType<T> = ({ value, row }: RenderFunctionArgsType<T>) => React.ReactNode | undefined;
 
 type RenderFunctionArgsType<T> = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  value: any;
-  row: T;
-};
+	value: any
+	row: T
+}
 
 export type ColumnByNameType<T> = Omit<Required<ColumnType<T>>, "name" | "sort">;
 
@@ -61,10 +58,9 @@ export interface RowType<T extends DataType> {
 }
 
 export type CellType = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  value: any;
-  render: () => React.ReactNode;
-};
+	value: any
+	render: () => React.ReactNode
+}
 
 export interface UseTableTypeParams<T extends DataType> {
   columns: ColumnType<T>[];
