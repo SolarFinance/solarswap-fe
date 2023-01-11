@@ -2180,10 +2180,10 @@
     superstruct "^0.14.2"
     tweetnacl "^1.0.3"
 
-"@solarswap/sdk@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@solarswap/sdk/-/sdk-1.0.6.tgz#a5cf649771c297390fba6bc225a14c7fbda4b626"
-  integrity sha512-58VCYMnBeGSstTlCzOuTBcwNm4AsIyoRLAirYED1XWaV8XmYSS9zFFniQuta3bhNt4T+6C/ihFZgcePb2LE1Yw==
+"@solarswap/sdk@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@solarswap/sdk/-/sdk-1.0.7.tgz#cb7345bfc4bb6d4e2c42aa4187228a5303b69008"
+  integrity sha512-z0HoBUHI2kS044IIhklB1qNCdAidkGXHnpZBHRx42wB+fDit0t5ePrwdzP+sHaAhGTKrPxipMVvt8OhMO5tT1w==
   dependencies:
     big.js "^5.2.2"
     decimal.js-light "^2.5.0"
