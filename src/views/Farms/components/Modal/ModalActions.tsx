@@ -1,7 +1,7 @@
 import { Row } from '@astraprotocol/astra-ui'
 import { Children } from 'react'
 
-const ModalActions: React.FC = ({ children }) => {
+const ModalActions: React.FC<any> = ({ children }) => {
 	const l = Children.toArray(children).length
 	return (
 		<Row>

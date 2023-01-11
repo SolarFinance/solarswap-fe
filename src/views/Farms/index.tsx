@@ -1,8 +1,12 @@
 import { FC } from 'react'
 import Farms, { FarmsContext } from './Farms'
 
-export const FarmsPageLayout: FC = ({ children }) => {
-  return <Farms>{children}</Farms>
+interface Props {
+	children: JSX.Element | JSX.Element[] | string | string[]
+}
+
+export const FarmsPageLayout: FC<Props> = ({ children }: Props) => {
+	return <Farms>{children}</Farms>
 }
 
 export { FarmsContext }

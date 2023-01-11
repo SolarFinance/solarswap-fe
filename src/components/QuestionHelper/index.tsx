@@ -1,8 +1,9 @@
 import { Icon, IconEnum } from '@astraprotocol/astra-ui'
+import { HtmlAttributes } from 'csstype'
 import { Placement, useTooltip } from 'hooks/useTooltip'
 import styles from './styles.module.scss'
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
 	text: string | React.ReactNode
 	placement?: Placement
 	size?: string

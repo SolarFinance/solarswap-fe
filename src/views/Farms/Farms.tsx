@@ -19,7 +19,7 @@ import { ViewMode } from 'state/user/actions'
 import { useRouter } from 'next/router'
 // import PageHeader from 'components/PageHeader'
 import SearchInput from 'components/SearchInput'
-import { Select, OptionProps, Toggle, Spinner, Container } from '@astraprotocol/astra-ui'
+import { Select, Toggle, Spinner, Container } from '@astraprotocol/astra-ui'
 import ToggleView from 'components/ToggleView/ToggleView'
 import Table from './components/FarmTable/FarmTable'
 import FarmTabButtons from './components/FarmTabButtons'
@@ -29,6 +29,7 @@ import Image from 'next/image'
 import styles from './styles.module.scss'
 import useMatchBreakpoints from 'hooks/useMatchBreakpoints'
 import clsx from 'clsx'
+import { OptionProps } from '@astraprotocol/astra-ui/lib/es/components/Select'
 
 const NUMBER_OF_FARMS_VISIBLE = 12
 
@@ -42,7 +43,11 @@ export const getDisplayApr = (asaRewardsApr?: number, lpRewardsApr?: number) => 
 	return null
 }
 
-const Farms: React.FC = ({ children }) => {
+interface Props {
+	children: JSX.Element | JSX.Element[] | string | string[]
+}
+
+const Farms: React.FC<Props> = ({ children }: Props) => {
 	const { pathname } = useRouter()
 	const { t } = useTranslation()
 	const { data: farmsLP, userDataLoaded, poolLength } = useFarms()

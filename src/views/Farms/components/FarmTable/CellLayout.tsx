@@ -1,5 +1,6 @@
 interface CellLayoutProps {
 	label?: string
+	children: JSX.Element | JSX.Element[] | string | string[]
 }
 
 const CellLayout: React.FC<CellLayoutProps> = ({ label = '', children }) => {
