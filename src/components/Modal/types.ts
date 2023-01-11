@@ -18,4 +18,5 @@ export interface ModalProps extends InjectedProps {
 	minWidth?: string
 	style?: React.CSSProperties
 	className?: string
+	children: JSX.Element | JSX.Element[] | string | string[]
 }

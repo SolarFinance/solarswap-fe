@@ -1,12 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
 import observerOptions from './options'
 import Wrapper from './Wrapper'
-import { ImageProps } from './types'
 import Placeholder from './Placeholder'
 import styles from './styles.module.scss'
 import NextImage from 'next/image'
 
-const Image: React.FC<ImageProps> = ({ src, alt, width, height, ...props }) => {
+const Image = ({ src, alt, width, height, ...props }) => {
 	const imgRef = useRef<HTMLDivElement>(null)
 	const [isLoaded, setIsLoaded] = useState(false)
 

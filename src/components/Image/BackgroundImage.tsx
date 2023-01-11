@@ -1,10 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 import observerOptions from './options'
 import Wrapper from './Wrapper'
-import { BackgroundImageProps } from './types'
 import Placeholder from './Placeholder'
 
-const BackgroundImage: React.FC<BackgroundImageProps> = ({ loadingPlaceholder, src, width, height, ...props }) => {
+const BackgroundImage = ({ loadingPlaceholder, src, width, height, ...props }) => {
 	const [isLoaded, setIsLoaded] = useState(false)
 	const ref = useRef<HTMLDivElement>(null)
 	const placeholder = loadingPlaceholder || <Placeholder />

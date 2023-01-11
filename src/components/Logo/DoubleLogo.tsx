@@ -18,10 +18,8 @@ export default function DoubleCurrencyLogo({
 }: DoubleCurrencyLogoProps) {
 	return (
 		<div className={clsx('flex row flex-hor-center flex-col-center', margin && 'margin-right-2xs')}>
-			{currency0 && (
-				<CurrencyLogo currency={currency0} size={`${size.toString()}px`} style={{ marginRight: '4px' }} />
-			)}
-			{currency1 && <CurrencyLogo currency={currency1} size={`${size.toString()}px`} />}
+			{currency0 && <CurrencyLogo currency={currency0} size={size} style={{ marginRight: '4px' }} />}
+			{currency1 && <CurrencyLogo currency={currency1} size={size} />}
 		</div>
 	)
 }

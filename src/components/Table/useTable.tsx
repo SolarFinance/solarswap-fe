@@ -295,7 +295,7 @@ const sortDataInOrder = <T extends DataType>(data: T[], columns: ColumnType<T>[]
 export const makeRender = <T extends DataType>(
 	// eslint-disable-next-line
 	value: any,
-	render: (({ value: val, row }: { value: any; row: T }) => ReactNode) | undefined,
+	render: (({ value, row }: { value: any; row: T }) => ReactNode) | undefined,
 	row: T
 ): (() => React.ReactNode) => {
 	return render ? () => render({ row, value }) : () => value

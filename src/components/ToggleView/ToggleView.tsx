@@ -1,5 +1,4 @@
 import { IconButton, IconEnum } from '@astraprotocol/astra-ui'
-import clsx from 'clsx'
 import { ViewMode } from 'state/user/actions'
 import styles from './styles.module.scss'
 
@@ -21,7 +20,7 @@ const ToggleView: React.FunctionComponent<ToggleViewProps> = ({ idPrefix, viewMo
 			<IconButton
 				icon={IconEnum.ICON_GRID}
 				size="lg"
-				id={`${idPrefix}CardView`}
+				// id={`${idPrefix}CardView`}
 				onClick={() => handleToggle(ViewMode.CARD)}
 				color={viewMode === ViewMode.CARD && '#6535e9'}
 				classes={'margin-right-xs'}
@@ -29,7 +28,7 @@ const ToggleView: React.FunctionComponent<ToggleViewProps> = ({ idPrefix, viewMo
 			<IconButton
 				icon={IconEnum.ICON_LIST}
 				size="lg"
-				id={`${idPrefix}TableView`}
+				// id={`${idPrefix}TableView`}
 				onClick={() => handleToggle(ViewMode.TABLE)}
 				color={viewMode === ViewMode.TABLE && '#6535e9'}
 				classes={'margin-right-xs'}

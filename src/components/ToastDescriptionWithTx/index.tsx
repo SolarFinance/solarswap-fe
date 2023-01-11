@@ -6,6 +6,7 @@ import truncateHash from 'utils/truncateHash'
 interface DescriptionWithTxProps {
 	description?: string
 	txHash?: string
+	children?: JSX.Element | JSX.Element[] | string | string[]
 }
 
 const ToastDescriptionWithTx: React.FC<DescriptionWithTxProps> = ({ txHash, children }) => {

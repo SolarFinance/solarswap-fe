@@ -55,7 +55,7 @@ export default function ManageTokens({
 			userAddedTokens.map(token => (
 				<Row key={token.address} style={{ justifyContent: 'space-between' }}>
 					<Row style={{ alignItems: 'center' }}>
-						<CurrencyLogo currency={token} size="20px" />
+						<CurrencyLogo currency={token} size={20} />
 						<Typography.Link
 							href={getAstraExplorerLink(token.address, 'address', chainId)}
 							classes="margin-left-xs"
