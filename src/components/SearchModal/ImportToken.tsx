@@ -3,7 +3,7 @@ import { Token, Currency } from '@solarswap/sdk'
 import { Checkbox, Icon, IconEnum, Message, NormalButton, Tag, Typography } from '@astraprotocol/astra-ui'
 
 import { useAddUserToken } from 'state/user/hooks'
-import { getAstraScanLink } from 'utils'
+import { getAstraExplorerLink } from 'utils'
 import truncateHash from 'utils/truncateHash'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useCombinedInactiveList } from 'state/lists/hooks'
@@ -77,7 +77,7 @@ function ImportToken({ tokens, handleCurrencySelect }: ImportProps) {
 								<span className="text text-base margin-right-xs">{address}</span>
 								<Typography.Link
 									target="_blank"
-									href={getAstraScanLink(token.address, 'address', chainId)}
+									href={getAstraExplorerLink(token.address, 'address', chainId)}
 								>
 									({t('View on AstraExplorer')})
 								</Typography.Link>
@@ -96,7 +96,11 @@ function ImportToken({ tokens, handleCurrencySelect }: ImportProps) {
 						checked={confirmed}
 						onChange={() => setConfirmed(!confirmed)}
 					/>
-					<span className="text text-base margin-left-xs" style={{ userSelect: 'none' }}>
+					<span
+						id="import-token-understand"
+						className="text text-base margin-left-xs"
+						style={{ userSelect: 'none' }}
+					>
 						{t('I understand')}
 					</span>
 				</div>
@@ -108,9 +112,9 @@ function ImportToken({ tokens, handleCurrencySelect }: ImportProps) {
 							handleCurrencySelect(tokens[0])
 						}
 					}}
-					className="token-dismiss-button"
+					classes={{ other: 'token-dismiss-button' }}
 				>
-					{t('Import')}
+					<span className="text text-base">{t('Import')}</span>
 				</NormalButton>
 			</div>
 		</div>

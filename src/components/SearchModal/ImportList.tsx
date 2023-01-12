@@ -96,15 +96,19 @@ function ImportList({ listURL, list, onImport }: ImportProps) {
 									onChange={() => setConfirmed(!confirmed)}
 									scale="sm"
 								/>
-								<span ml="10px" style={{ userSelect: 'none' }}>
+								<span className="margin-left-xs" style={{ userSelect: 'none' }}>
 									{t('I understand')}
 								</span>
 							</div>
 						</div>
 					</Message>
 
-					<NormalButton disabled={!confirmed} onClick={handleAddList}>
-						{t('Import')}
+					<NormalButton
+						classes={{ other: 'token-search-import-button' }}
+						disabled={!confirmed}
+						onClick={handleAddList}
+					>
+						<span className="text text-base">{t('Import')}</span>
 					</NormalButton>
 					{addError ? (
 						<span color="failure" style={{ textOverflow: 'ellipsis', overflow: 'hidden' }}>
