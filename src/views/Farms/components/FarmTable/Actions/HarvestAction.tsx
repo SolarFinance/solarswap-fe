@@ -15,6 +15,7 @@ import Skeleton from 'react-loading-skeleton'
 import styles from './styles.module.scss'
 import { NormalButton, withToast } from '@astraprotocol/astra-ui'
 import ToastDescriptionWithTx from 'components/ToastDescriptionWithTx'
+import Dots from 'components/Loader/Dots'
 
 interface HarvestActionProps extends FarmWithStakedValue {
 	userDataReady: boolean
@@ -88,7 +89,7 @@ const HarvestAction: React.FunctionComponent<HarvestActionProps> = ({ pid, userD
 					}}
 					// classes={{ other: 'padding-left-xs' }}
 				>
-					<span className="text text-base">{pendingTx ? t('Harvesting') : t('Harvest')}</span>
+					<span className="text text-base">{pendingTx ? <Dots>{t('Harvesting')}</Dots> : t('Harvest')}</span>
 				</NormalButton>
 			</div>
 		</div>

@@ -11,18 +11,7 @@ import styles from './styles.module.scss'
 import clsx from 'clsx'
 import ModalInput from './Modal/ModalInput'
 import ModalActions from './Modal/ModalActions'
-
-// const AnnualRoiContainer = styled(Flex)`
-// 	cursor: pointer;
-// `
-
-// const AnnualRoiDisplay = styled(Text)`
-// 	width: 72px;
-// 	max-width: 72px;
-// 	overflow: hidden;
-// 	text-align: right;
-// 	text-overflow: ellipsis;
-// `
+import Dots from '../../../components/Loader/Dots'
 
 interface DepositModalProps {
 	max: BigNumber
@@ -163,7 +152,7 @@ const DepositModal: React.FC<DepositModalProps> = ({
 						setPendingTx(false)
 					}}
 				>
-					<span className="text text-base">{pendingTx ? t('Confirming') : t('Confirm')}</span>
+					<span className="text text-base">{pendingTx ? <Dots>{t('Confirming')}</Dots> : t('Confirm')}</span>
 				</NormalButton>
 			</ModalActions>
 			<Typography.Link href={addLiquidityUrl} classes="margin-top-md text-center">
