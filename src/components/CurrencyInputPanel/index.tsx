@@ -130,7 +130,7 @@ export default function CurrencyInputPanel({
 			<div className="border radius-lg same-bg-color-50 margin-bottom-md margin-left-sm">
 				<div className={styles.labelRow}>
 					<NumericalInput
-						className="token-amount-input"
+						className={`token-amount-${id.replace('swap-currency-', '')}`}
 						value={value}
 						onUserInput={val => {
 							onUserInput(val)
