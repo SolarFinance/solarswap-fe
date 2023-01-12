@@ -1,40 +1,45 @@
 describe('Swap', () => {
 	beforeEach(() => {
-		cy.visit('/swap')
+		cy.visit('http://localhost/swap')
 	})
+	const delay = 200
+	const usdt = '0x6f74f5511ba144990A8aeBaF20AFBD3B56EedCb2'
+	// const busd = '0x092d93f258ceea20c94ba01e8771115141dd7c20'
 	it('can enter an amount into input', () => {
-		cy.get('#swap-currency-input .token-amount-input').type('0.001', { delay: 300 }).should('have.value', '0.001')
+		cy.get('#swap-currency-input .token-amount-input').type('0.001', { delay }).should('have.value', '0.001')
 	})
 
 	it('zero swap amount', () => {
-		cy.get('#swap-currency-input .token-amount-input').type('0.0', { delay: 300 }).should('have.value', '0.0')
+		cy.get('#swap-currency-input .token-amount-input').type('0.0', { delay }).should('have.value', '0.0')
 	})
 
 	it('invalid swap amount', () => {
-		cy.get('#swap-currency-input .token-amount-input').type('\\', { delay: 300 }).should('have.value', '')
+		cy.get('#swap-currency-input .token-amount-input').type('\\', { delay }).should('have.value', '')
 	})
 
 	it('can enter an amount into output', () => {
-		cy.get('#swap-currency-output .token-amount-output').type('0.001', { delay: 300 }).should('have.value', '0.001')
+		cy.get('#swap-currency-output .token-amount-output').type('0.001', { delay }).should('have.value', '0.001')
 	})
 
 	it('zero output amount', () => {
-		cy.get('#swap-currency-output .token-amount-output').type('0.0', { delay: 300 }).should('have.value', '0.0')
+		cy.get('#swap-currency-output .token-amount-output').type('0.0', { delay }).should('have.value', '0.0')
 	})
 
 	// This test requires account with some amount of ASA on it
 	// Now with random private key it shows Insufficient ASA Balance button
-	it.skip('can swap ASA for USDT', () => {
-		cy.get('#swap-currency-output .open-currency-select-button').click()
-		cy.get('.token-item-0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56').should('be.visible')
-		cy.get('.token-item-0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56').click({
-			force: true
-		})
+	// it.skip('can swap ASA for USDT', () => {
+	it('can swap ASA for USDT', () => {
+		// cy.visit(`http://localhost/swap?inputCurrency=${busd}&outputCurrency=ASA`)
+		// cy.get('#swap-currency-output .open-currency-select-button').click()
+		// cy.get(`.token-item-${usdt}`).should('be.visible')
+		// cy.get(`.token-item-${usdt}`).click({
+		// 	force: true
+		// })
 		cy.get('#swap-currency-input').should('be.visible')
-		cy.get('#swap-currency-input').type('0.001', { force: true, delay: 300 })
+		cy.get('#swap-currency-input .token-amount-input').type('0.001', { force: true, delay })
 		cy.get('#swap-currency-output').should('not.equal', '')
 		cy.get('#swap-button').click()
-		cy.get('#confirm-swap-or-send').should('contain', 'Confirm Swap')
+		cy.get('#confirm-swap-or-send').should('contain', 'Xác nhận Hoán đổi')
 	})
 
 	it('add a recipient does not exist unless in expert mode', () => {
@@ -42,8 +47,8 @@ describe('Swap', () => {
 	})
 
 	it('should get input and output currency from url params', () => {
-		cy.visit('/swap?inputCurrency=0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5&outputCurrency=ASA')
-		cy.get('#swap-currency-input #pair').should('contain', 'BUSD')
+		cy.visit(`http://localhost/swap?inputCurrency=${usdt}&outputCurrency=ASA`)
+		cy.get('#swap-currency-input #pair').should('contain', 'USDT')
 		cy.get('#swap-currency-output #pair').should('contain', 'ASA')
 	})
 
