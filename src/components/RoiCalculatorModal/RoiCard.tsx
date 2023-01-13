@@ -84,8 +84,7 @@ const RoiCard: React.FC<RoiCardProps> = ({ earningTokenSymbol, calculatorState, 
 									})}
 								</span>
 							</div>
-							<IconButton icon={IconEnum.ICON_ARROW_DOWN} size="sm" onClick={onEnterEditing} />
-							{/* <PencilIcon color="primary" /> */}
+							<IconButton icon={IconEnum.ICON_EDIT} size="sm" onClick={onEnterEditing} />
 						</>
 					)}
 				</div>
