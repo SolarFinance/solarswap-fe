@@ -3,7 +3,7 @@ name: Integration Tests
 on:
     pull_request:
         branches:
-            - develop
+            - fix/ci-auto
 
 jobs:
     integration-tests:

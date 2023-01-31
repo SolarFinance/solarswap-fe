@@ -133,10 +133,7 @@ export const getCustomMeta = (path: string, t: ContextApi['t']): PageMeta => {
 			return {
 				title: `${t('Profile')} | ${t('SolarSwap')}`,
 			}
-		case '/solar-squad':
-			return {
-				title: `${t('Pancake Squad')} | ${t('SolarSwap')}`,
-			}
+
 		default:
 			return null
 	}

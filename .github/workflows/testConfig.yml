@@ -6,7 +6,7 @@ on:
             - 'src/config/**'
     push:
         branches:
-            - master
+            - main
 
 jobs:
     test:

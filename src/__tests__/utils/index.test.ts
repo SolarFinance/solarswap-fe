@@ -12,18 +12,18 @@ import {
 describe('utils', () => {
 	describe('#getAstraExplorerLink', () => {
 		it('correct for tx', () => {
-			expect(getAstraExplorerLink('abc', 'transaction', ChainId.MAINNET)).toEqual(
-				'https://explorer.astranaut.io/tx/abc',
+			expect(getAstraExplorerLink('abc', 'transaction', ChainId.TESTNET)).toEqual(
+				'https://explorer.astranaut.dev/tx/abc',
 			)
 		})
 		it('correct for token', () => {
-			expect(getAstraExplorerLink('abc', 'token', ChainId.MAINNET)).toEqual(
-				'https://explorer.astranaut.io/token/abc',
+			expect(getAstraExplorerLink('abc', 'token', ChainId.TESTNET)).toEqual(
+				'https://explorer.astranaut.dev/token/abc',
 			)
 		})
 		it('correct for address', () => {
-			expect(getAstraExplorerLink('abc', 'address', ChainId.MAINNET)).toEqual(
-				'https://explorer.astranaut.io/address/abc',
+			expect(getAstraExplorerLink('abc', 'address', ChainId.TESTNET)).toEqual(
+				'https://explorer.astranaut.dev/address/abc',
 			)
 		})
 		it('enum', () => {

@@ -16,8 +16,7 @@ const GasSettings = () => {
 				</span>
 				<QuestionHelper
 					text={t(
-						'Adjusts the gas price (transaction fee) for your transaction. Higher %gasUnit% = higher speed = higher fees',
-						{ gasUnit: 'TWEI' },
+						'Adjusts the gas price (transaction fee) for your transaction. Higher GWEI = higher speed = higher fees',
 					)}
 					placement="top"
 				/>
