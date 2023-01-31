@@ -35,7 +35,7 @@ jobs:
                       ${{ runner.os }}-yarn-
 
             - name: Cypress install
-              run: GITHUB_PACKAGE_TOKEN=${GITHUB_TOKEN} yarn install --frozen-lockfile
+              run: GITHUB_PACKAGE_TOKEN=${NPM_TOKEN} yarn install --frozen-lockfile
               env:
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
             - run: yarn cypress install
