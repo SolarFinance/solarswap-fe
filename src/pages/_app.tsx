@@ -42,6 +42,7 @@ BigNumber.config({
 	DECIMAL_PLACES: 80
 })
 
+console.log('CHAIN_ID', CHAIN_ID)
 const chainId = parseInt(CHAIN_ID)
 
 function GlobalHooks() {
