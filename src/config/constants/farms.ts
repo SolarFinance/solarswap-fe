@@ -22,7 +22,7 @@ const farms: SerializedFarmConfig[] = [
 		pid: 1,
 		lpSymbol: 'USDT-ASA LP',
 		lpAddresses: {
-			11115: '0xc72a12090127B7E02A7544036b3D5872d9BAAD6C',
+			11115: '0xfcb81CBBB8d74030A9C5BF24e0f61d6C4a734f2f',
 			56: '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0'
 		},
 		token: serializedTokens.usdt,
