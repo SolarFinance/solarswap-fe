@@ -1292,7 +1292,7 @@
 	"Buy Minting Tickets": "주조 티켓 구입",
 	"and the remaining NFTs can be minted by anyone with a ": "그리고 남은 NFT는 다음 프로필을 가진 사용자가 주조할 수 있습니다: ",
 	"Buy Squad Tickets, while stocks last. You’ll use them in step 4.": "재고 소진 시까지 스쿼드 티켓을 구입하세요. 4단계에서 사용합니다.",
-	"The network may become busy during the sale period. Consider setting a high gas fee (GWEI)": "판매 기간 동안 네트워크 사용량이 높을 수 있습니다. 높은 가스 요금(%gasUnit%) 설정을 고려하세요.",
+	"The network may become busy during the sale period. Consider setting a high gas fee (GWEI).": "판매 기간 동안 네트워크 사용량이 높을 수 있습니다. 높은 가스 요금(%gasUnit%) 설정을 고려하세요.",
 	"Solar Profile!": "Solar 프로필!",
 	"Phase Complete!": "단계 완료!",
 	"Claim Phase": "클레임 단계",
