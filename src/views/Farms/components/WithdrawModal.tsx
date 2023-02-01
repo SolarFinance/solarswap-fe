@@ -6,6 +6,7 @@ import { Modal } from 'components/Modal'
 import { NormalButton } from '@astraprotocol/astra-ui'
 import ModalActions from './Modal/ModalActions'
 import ModalInput from './Modal/ModalInput'
+import Dots from 'components/Loader/Dots'
 
 interface WithdrawModalProps {
 	max: BigNumber
@@ -68,7 +69,7 @@ const WithdrawModal: React.FC<WithdrawModalProps> = ({ onConfirm, onDismiss, max
 					}}
 					classes={{ other: 'width-100' }}
 				>
-					<span className="text text-base">{pendingTx ? t('Confirming') : t('Confirm')}</span>
+					<span className="text text-base">{pendingTx ? <Dots>{t('Confirming')}</Dots> : t('Confirm')}</span>
 				</NormalButton>
 			</ModalActions>
 		</Modal>

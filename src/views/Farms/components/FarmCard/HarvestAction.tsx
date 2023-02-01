@@ -2,6 +2,7 @@ import { NormalButton, withToast } from '@astraprotocol/astra-ui'
 import { useWeb3React } from '@web3-react/core'
 import BigNumber from 'bignumber.js'
 import Balance from 'components/Balance'
+import Dots from 'components/Loader/Dots'
 import ToastDescriptionWithTx from 'components/ToastDescriptionWithTx'
 import { useTranslation } from 'contexts/Localization'
 import useCatchTxError from 'hooks/useCatchTxError'
@@ -68,7 +69,7 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
 					}
 				}}
 			>
-				{pendingTx ? t('Harvesting') : t('Harvest')}
+				<span className="text text-base">{pendingTx ? <Dots>{t('Harvesting')}</Dots> : t('Harvest')}</span>
 			</NormalButton>
 		</div>
 	)

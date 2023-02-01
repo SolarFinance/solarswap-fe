@@ -5,8 +5,8 @@ import { NextPage } from 'next'
 // import GlobalCheckClaimStatus from "components/GlobalCheckClaimStatus";
 // import FixedSubgraphHealthIndicator from "components/SubgraphHealthIndicator";
 // import useEagerConnect from "hooks/useEagerConnect";
-// import { useInactiveListener } from "hooks/useInactiveListener";
-// import useSentryUser from "hooks/useSentryUser";
+import { useInactiveListener } from 'hooks/useInactiveListener'
+import useSentryUser from 'hooks/useSentryUser'
 // import useUserAgent from "hooks/useUserAgent";
 import type { AppProps } from 'next/app'
 import { init, Web3OnboardProvider } from '@web3-onboard/react'
@@ -17,7 +17,7 @@ import { Fragment } from 'react'
 import { PersistGate } from 'redux-persist/integration/react'
 import { useStore, persistor } from 'state'
 import { usePollBlockNumber } from 'state/block/hooks'
-// import { usePollCoreFarmData } from "state/farms/hooks";
+import { usePollCoreFarmData } from 'state/farms/hooks'
 import astraConnectModule from 'libs/astrawallet'
 import '@astraprotocol/astra-ui/lib/shared/style.css'
 import { Blocklist, Updaters } from '..'
@@ -42,15 +42,16 @@ BigNumber.config({
 	DECIMAL_PLACES: 80
 })
 
-const chainId = parseInt(CHAIN_ID)
+console.log('CHAIN_ID', process.env.NEXT_PUBLIC_CHAIN_ID)
+const chainId = parseInt(CHAIN_ID || '11115')
 
 function GlobalHooks() {
 	usePollBlockNumber()
-	// usePollCoreFarmData()
+	usePollCoreFarmData()
 	useEagerConnect()
 	// useUserAgent()
-	// useInactiveListener()
-	// useSentryUser()
+	useInactiveListener()
+	useSentryUser()
 	return null
 }
 
@@ -63,7 +64,7 @@ const walletConnect = walletConnectModule({
 
 const astraWallet = astraConnectModule({
 	icon: '/images/logo/asa.svg',
-	chainId: parseInt(CHAIN_ID),
+	chainId,
 	rpcUrl: getNodeUrl(),
 	onAppDisconnect: () => WalletHelper.removeCacheConnect(),
 	metadata: {
@@ -82,9 +83,9 @@ const web3Onboard = init({
 			id: `0x${chainId.toString(16)}`,
 			token: 'ASA',
 			label: 'Astra testnet',
-			rpcUrl: 'https://rpc.astranaut.dev/',
+			rpcUrl: getNodeUrl(),
 			icon: '/images/logo/transparent_logo.svg',
-			blockExplorerUrl: 'https://explorer.astranaut.dev/'
+			blockExplorerUrl: process.env.NEXT_PUBLIC_EXPLORER
 		}
 	],
 	appMetadata: {

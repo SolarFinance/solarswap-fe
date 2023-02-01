@@ -41,7 +41,7 @@
 		"@astra-sdk/connector": "^1.1.5",
 		"@astra-sdk/wallet-connect": "^1.0.4",
 		"@astra-sdk/walletconnect-connector": "^1.0.3",
-		"@astraprotocol/astra-ui": "file:../../Github/astra-ui",
+		"@astraprotocol/astra-ui": "^1.0.30",
 		"@ethersproject/abi": "^5.5.0",
 		"@ethersproject/address": "^5.5.0",
 		"@ethersproject/bignumber": "^5.5.0",
@@ -98,6 +98,7 @@
 		"react-window": "^1.8.6",
 		"recharts": "2.0.6",
 		"redux-persist": "^6.0.0",
+		"sharp": "^0.31.3",
 		"swr": "^1.2.2",
 		"typescript": "^4.5.4"
 	},
