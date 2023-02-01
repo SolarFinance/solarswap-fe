@@ -1292,7 +1292,7 @@
 	"Buy Minting Tickets": "購買打造票券",
 	"and the remaining NFTs can be minted by anyone with a ": "剩餘 NFT 可供打造，打造者需具有 ",
 	"Buy Squad Tickets, while stocks last. You’ll use them in step 4.": "購買小隊票券，售完即止。您將在第 4 步驟中用到。",
-	"The network may become busy during the sale period. Consider setting a high gas fee GWEI": "網路在銷售期間可能會變得繁忙。請考慮設定較高的 gas 費用 (%gasUnit%)。",
+	"The network may become busy during the sale period. Consider setting a high gas fee (GWEI)": "網路在銷售期間可能會變得繁忙。請考慮設定較高的 gas 費用 (%gasUnit%)。",
 	"Solar Profile!": "Solar 個人檔案！",
 	"Phase Complete!": "階段完成！",
 	"Claim Phase": "領取階段",

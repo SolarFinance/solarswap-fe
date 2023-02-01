@@ -1292,7 +1292,7 @@
 	"Buy Minting Tickets": "Pénzverde szelvények vásárlása",
 	"and the remaining NFTs can be minted by anyone with a ": "és a maradék NFT-ket pedig bárki elkészítheti, akinek ",
 	"Buy Squad Tickets, while stocks last. You’ll use them in step 4.": "Vásároljon osztag (Squad) szelvényeket, amíg a készlet tart. Ezeket a 4. lépésben fogja használni.",
-	"The network may become busy during the sale period. Consider setting a high gas fee GWEI": "Előfordulhat, hogy a hálózat foglalt lesz az értékesítés időszakában. Fontolja meg a magas gázdíj (%gasUnit%) beállítását.",
+	"The network may become busy during the sale period. Consider setting a high gas fee (GWEI)": "Előfordulhat, hogy a hálózat foglalt lesz az értékesítés időszakában. Fontolja meg a magas gázdíj (%gasUnit%) beállítását.",
 	"Solar Profile!": "Solar profil!",
 	"Phase Complete!": "Fázis teljesítve!",
 	"Claim Phase": "Fázis igénylése",

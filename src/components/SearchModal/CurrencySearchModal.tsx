@@ -110,7 +110,7 @@ export default function CurrencySearchModal({
 						<NormalButton
 							classes={{
 								color: 'secondary-color-normal',
-								other: 'text-bold text-base list-token-manage-button'
+								other: 'text-bold text-base list-token-manage-button',
 							}}
 							variant="text"
 							onClick={() => setModalView(CurrencyModalView.manage)}
