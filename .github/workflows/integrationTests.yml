@@ -37,7 +37,7 @@ jobs:
                       ${{ runner.os }}-yarn-
 
             - name: Cypress install
-              run: npm ci && yarn install --frozen-lockfile
+              run: yarn install --frozen-lockfile
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
             - run: yarn cypress install
