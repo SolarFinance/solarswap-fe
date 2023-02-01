@@ -43,6 +43,12 @@ jobs:
               run: yarn install --frozen-lockfile
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.PAT_ASTRAPROTOCOL }}
+            - name: make env
+              uses: canastro/copy-file-action@master
+              with:
+                  source: '.env.sample'
+                  target: '.env'
+
             - run: yarn cypress install
             - run: yarn build
               env:
